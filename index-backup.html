@@ -1,0 +1,1841 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>XENYX E-SPORTS</title>
+
+
+<style>
+
+/* ================= RESET ================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#080808;
+    color:white;
+}
+
+
+/* ================= NAVBAR ================= */
+
+nav{
+    height:70px;
+    padding:0 20px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    background:#111;
+
+    border-bottom:2px solid #ff174f;
+
+    position:sticky;
+    top:0;
+
+    z-index:1000;
+}
+
+.logo img{
+    height:50px;
+    width:auto;
+    display:block;
+}
+
+.menu{
+    display:flex;
+    gap:15px;
+}
+
+.menu a{
+    color:white;
+    text-decoration:none;
+
+    font-size:13px;
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.menu a:hover{
+    color:#ff174f;
+}
+
+
+/* ================= HERO ================= */
+
+.hero{
+
+    min-height:85vh;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:40px 20px;
+
+    background:
+    radial-gradient(
+        circle at center,
+        #45091d 0%,
+        #080808 65%
+    );
+}
+
+.hero-logo{
+
+    width:130px;
+    height:130px;
+
+    object-fit:contain;
+
+    margin-bottom:20px;
+
+    filter:
+    drop-shadow(
+        0 0 25px #ff174f
+    );
+}
+
+.hero h1{
+
+    font-size:45px;
+
+    color:#ff174f;
+
+    letter-spacing:4px;
+
+    text-shadow:
+    0 0 25px #ff174f;
+}
+
+.hero h2{
+
+    margin-top:12px;
+
+    font-size:15px;
+
+    letter-spacing:4px;
+}
+
+.hero .est{
+
+    margin-top:10px;
+
+    color:#ff174f;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+    letter-spacing:2px;
+}
+
+.hero p{
+
+    margin-top:20px;
+
+    max-width:550px;
+
+    color:#aaa;
+
+    line-height:1.7;
+}
+
+.btn{
+
+    display:inline-block;
+
+    margin-top:30px;
+
+    padding:14px 25px;
+
+    background:#ff174f;
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:6px;
+
+    font-weight:bold;
+
+    box-shadow:
+    0 0 20px #ff174f;
+
+    transition:.3s;
+}
+
+.btn:hover{
+
+    transform:
+    translateY(-3px);
+
+    box-shadow:
+    0 0 30px #ff174f;
+}
+
+
+/* ================= SECTION ================= */
+
+section{
+
+    padding:60px 20px;
+
+    max-width:1100px;
+
+    margin:auto;
+}
+
+.title{
+
+    text-align:center;
+
+    margin-bottom:35px;
+}
+
+.title h2{
+
+    color:#ff174f;
+
+    font-size:30px;
+
+    letter-spacing:2px;
+}
+
+.title p{
+
+    color:#777;
+
+    margin-top:8px;
+}
+
+
+/* ================= PLAYERS ================= */
+
+.players{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(
+        auto-fit,
+        minmax(220px,1fr)
+    );
+
+    gap:20px;
+}
+
+.player{
+
+    background:#141414;
+
+    border:1px solid #40202a;
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+    text-align:center;
+
+    transition:.3s;
+}
+
+.player:hover{
+
+    transform:
+    translateY(-7px);
+
+    border-color:#ff174f;
+
+    box-shadow:
+    0 0 25px #300812;
+}
+
+.player-card{
+
+    width:100%;
+}
+
+.player-card img{
+
+    width:100%;
+
+    height:280px;
+
+    object-fit:cover;
+
+    display:block;
+
+    background:#222;
+}
+
+.player-card > h3{
+
+    padding-top:15px;
+
+    font-size:19px;
+}
+
+.player-info{
+
+    padding:
+    15px 20px 22px;
+}
+
+.player-info h3{
+
+    font-size:19px;
+}
+
+.ing{
+
+    color:#ff174f;
+
+    margin-top:8px;
+
+    font-size:14px;
+}
+
+.role{
+
+    color:#888;
+
+    margin-top:6px;
+
+    font-size:13px;
+}
+
+.profile-btn{
+
+    margin-top:18px;
+
+    width:100%;
+
+    padding:11px;
+
+    border:none;
+
+    border-radius:5px;
+
+    background:#ff174f;
+
+    color:white;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.profile-btn:hover{
+
+    background:#e0003d;
+
+    box-shadow:
+    0 0 15px #ff174f;
+}
+
+
+/* ================= TEAM OVERVIEW ================= */
+
+.stats{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(
+        auto-fit,
+        minmax(180px,1fr)
+    );
+
+    gap:18px;
+}
+
+.stat{
+
+    background:#141414;
+
+    border:1px solid #40202a;
+
+    border-radius:10px;
+
+    padding:25px;
+
+    text-align:center;
+}
+
+.stat strong{
+
+    display:block;
+
+    color:#ff174f;
+
+    font-size:28px;
+
+    margin-bottom:8px;
+}
+
+.stat span{
+
+    color:#888;
+
+    font-size:13px;
+}
+
+
+/* ================= ABOUT ================= */
+
+.about{
+
+    text-align:center;
+
+    max-width:750px;
+
+    margin:auto;
+
+    color:#aaa;
+
+    line-height:1.8;
+}
+
+
+/* ================= GALLERY ================= */
+
+.gallery{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(
+        auto-fit,
+        minmax(180px,1fr)
+    );
+
+    gap:15px;
+}
+
+.gallery img{
+
+    width:100%;
+
+    height:220px;
+
+    object-fit:cover;
+
+    border-radius:10px;
+
+    border:1px solid #40202a;
+
+    transition:.3s;
+}
+
+.gallery img:hover{
+
+    transform:
+    scale(1.03);
+
+    border-color:#ff174f;
+}
+
+
+/* ================= MODAL ================= */
+
+.modal{
+
+    display:none;
+
+    position:fixed;
+
+    z-index:2000;
+
+    left:0;
+    top:0;
+
+    width:100%;
+    height:100%;
+
+    background:
+    rgba(0,0,0,.92);
+
+    overflow:auto;
+
+    padding:30px 15px;
+}
+
+.profile-box{
+
+    max-width:650px;
+
+    margin:30px auto;
+
+    background:#121212;
+
+    border:1px solid #ff174f;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 0 35px #350914;
+}
+
+.profile-header{
+
+    padding:25px;
+
+    text-align:center;
+
+    background:
+    linear-gradient(
+        135deg,
+        #240510,
+        #111
+    );
+
+    position:relative;
+}
+
+.profile-header h2{
+
+    color:#ff174f;
+
+    margin-bottom:8px;
+}
+
+.profile-header p{
+
+    color:#aaa;
+}
+
+.close{
+
+    position:absolute;
+
+    right:20px;
+    top:10px;
+
+    font-size:32px;
+
+    color:white;
+
+    cursor:pointer;
+}
+
+.close:hover{
+
+    color:#ff174f;
+}
+
+.profile-content{
+
+    padding:20px;
+}
+
+.info{
+
+    display:grid;
+
+    grid-template-columns:
+    1fr 1fr;
+
+    gap:12px;
+}
+
+.info-box{
+
+    background:#1b1b1b;
+
+    border:1px solid #332126;
+
+    padding:14px;
+
+    border-radius:8px;
+}
+
+.info-box label{
+
+    display:block;
+
+    color:#ff174f;
+
+    font-size:11px;
+
+    margin-bottom:6px;
+
+    text-transform:uppercase;
+}
+
+.info-box span{
+
+    color:#ddd;
+
+    font-size:14px;
+
+    word-break:break-word;
+}
+
+.achievement{
+
+    margin-top:20px;
+
+    padding:18px;
+
+    background:#1b1b1b;
+
+    border-radius:8px;
+}
+
+.achievement h3{
+
+    color:#ff174f;
+
+    margin-bottom:10px;
+}
+
+.achievement p{
+
+    color:#aaa;
+
+    line-height:1.6;
+}
+
+.active{
+
+    color:#00ff88 !important;
+
+    font-weight:bold;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer{
+
+    padding:30px;
+
+    text-align:center;
+
+    background:#111;
+
+    color:#666;
+
+    border-top:
+    1px solid #30121b;
+}
+
+footer strong{
+
+    color:#ff174f;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:600px){
+
+    .logo img{
+        height:43px;
+    }
+
+    .menu{
+        gap:8px;
+    }
+
+    .menu a{
+        font-size:10px;
+    }
+
+    .hero h1{
+        font-size:32px;
+    }
+
+    .hero h2{
+        font-size:12px;
+    }
+
+    .hero-logo{
+        width:110px;
+        height:110px;
+    }
+
+    .info{
+        grid-template-columns:1fr;
+    }
+
+    .player-card img{
+        height:260px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+    <div class="logo">
+
+        <img
+        src="images/XENYX.jpg"
+        alt="XENYX E-SPORTS">
+
+    </div>
+
+
+    <div class="menu">
+
+        <a href="#home">
+            Home
+        </a>
+
+        <a href="#players">
+            Players
+        </a>
+
+        <a href="#stats">
+            Stats
+        </a>
+
+        <a href="#gallery">
+            Gallery
+        </a>
+
+        <a href="#about">
+            About
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- ================= HOME ================= -->
+
+<section
+class="hero"
+id="home">
+
+
+    <img
+    class="hero-logo"
+    src="images/XENYX.jpg"
+    alt="XENYX Logo">
+
+
+    <h1>
+        XENYX E-SPORTS
+    </h1>
+
+
+    <h2>
+        FREE FIRE ESPORTS TEAM
+    </h2>
+
+
+    <div class="est">
+        EST. 10 MARCH 2025
+    </div>
+
+
+    <p>
+
+        Welcome to the official team profile
+        of XENYX E-SPORTS.
+        Meet our players and explore our journey.
+
+    </p>
+
+
+    <a
+    href="#players"
+    class="btn">
+
+        MEET OUR PLAYERS
+
+    </a>
+
+</section>
+
+
+
+<!-- ================= PLAYERS ================= -->
+
+<section id="players">
+
+
+    <div class="title">
+
+        <h2>
+            OUR PLAYERS
+        </h2>
+
+        <p>
+            XENYX E-SPORTS OFFICIAL ROSTER
+        </p>
+
+    </div>
+
+
+    <div class="players">
+
+
+        <!-- PLAYER 1 MOIN -->
+
+        <div class="player">
+
+            <div class="player-card">
+
+                <img
+                src="images/moin.jpg"
+                alt="MOIN">
+
+                <h3>
+                    MOIN
+                </h3>
+
+
+                <div class="player-info">
+
+                    <h3>
+                        MOIN UDDIN
+                    </h3>
+
+                    <div class="ing">
+                        XE•ᴰᵃʳᵏᴢᵉⁿㅤ모
+                    </div>
+
+                    <div class="role">
+                        Second Rusher + IGL
+                    </div>
+
+                    <button
+                    class="profile-btn"
+                    onclick="openProfile(0)">
+
+                        VIEW FULL PROFILE
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PLAYER 2 SABBIR -->
+
+        <div class="player">
+
+            <div class="player-card">
+
+                <img
+                src="images/sabbir.jpg"
+                alt="SABBIR">
+
+                <h3>
+                    SABBIR
+                </h3>
+
+
+                <div class="player-info">
+
+                    <h3>
+                        SABBIR SHAIKH
+                    </h3>
+
+                    <div class="ing">
+                        XE•SABBIR
+                    </div>
+
+                    <div class="role">
+                        First Rusher
+                    </div>
+
+                    <button
+                    class="profile-btn"
+                    onclick="openProfile(1)">
+
+                        VIEW FULL PROFILE
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PLAYER 3 SHAKIB -->
+
+        <div class="player">
+
+            <div class="player-card">
+
+                <img
+                src="images/sakib.jpg"
+                alt="SHAKIB">
+
+                <h3>
+                    SHAKIB
+                </h3>
+
+
+                <div class="player-info">
+
+                    <h3>
+                        SHAKIB SHAIKH
+                    </h3>
+
+                    <div class="ing">
+                        AS··SAKIBㅤ모
+                    </div>
+
+                    <div class="role">
+                        Sniper
+                    </div>
+
+                    <button
+                    class="profile-btn"
+                    onclick="openProfile(2)">
+
+                        VIEW FULL PROFILE
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PLAYER 4 RIYAD -->
+
+        <div class="player">
+
+            <div class="player-card">
+
+                <img
+                src="images/riyad.jpg"
+                alt="RIYAD">
+
+                <h3>
+                    RIYAD
+                </h3>
+
+
+                <div class="player-info">
+
+                    <h3>
+                        RIYAD SHAIKH
+                    </h3>
+
+                    <div class="ing">
+                        AS··RIYADㅤ모
+                    </div>
+
+                    <div class="role">
+                        Supporter
+                    </div>
+
+                    <button
+                    class="profile-btn"
+                    onclick="openProfile(3)">
+
+                        VIEW FULL PROFILE
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PLAYER 5 TANZIL -->
+
+        <div class="player">
+
+            <div class="player-card">
+
+                <img
+                src="images/jumman.jpg"
+                alt="TANZIL">
+
+                <h3>
+                    TANZIL
+                </h3>
+
+
+                <div class="player-info">
+
+                    <h3>
+                        TANZIL HOSSEN
+                    </h3>
+
+                    <div class="ing">
+                        Tanzil Sir
+                    </div>
+
+                    <div class="role">
+                        Supporter
+                    </div>
+
+                    <button
+                    class="profile-btn"
+                    onclick="openProfile(4)">
+
+                        VIEW FULL PROFILE
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= STATS ================= -->
+
+<section id="stats">
+
+    <div class="title">
+
+        <h2>
+            TEAM OVERVIEW
+        </h2>
+
+        <p>
+            XENYX E-SPORTS
+        </p>
+
+    </div>
+
+
+    <div class="stats">
+
+        <div class="stat">
+
+            <strong>
+                5
+            </strong>
+
+            <span>
+                ACTIVE PLAYERS
+            </span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <strong>
+                2025
+            </strong>
+
+            <span>
+                TEAM ESTABLISHED
+            </span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <strong>
+                FREE FIRE
+            </strong>
+
+            <span>
+                MAIN GAME
+            </span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <strong>
+                ACTIVE
+            </strong>
+
+            <span>
+                TEAM STATUS
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= GALLERY ================= -->
+
+<section id="gallery">
+
+    <div class="title">
+
+        <h2>
+            TEAM GALLERY
+        </h2>
+
+        <p>
+            XENYX E-SPORTS PLAYERS
+        </p>
+
+    </div>
+
+
+    <div class="gallery">
+
+        <img
+        src="images/moin.jpg"
+        alt="Moin">
+
+        <img
+        src="images/sabbir.jpg"
+        alt="Sabbir">
+
+        <img
+        src="images/sakib.jpg"
+        alt="Shakib">
+
+        <img
+        src="images/riyad.jpg"
+        alt="Riyad">
+
+        <img
+        src="images/jumman.jpg"
+        alt="Tanzil">
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+    <div class="title">
+
+        <h2>
+            ABOUT XENYX
+        </h2>
+
+        <p>
+            XENYX E-SPORTS
+        </p>
+
+    </div>
+
+
+    <div class="about">
+
+        XENYX E-SPORTS is a competitive
+        Free Fire esports team dedicated
+        to improving, competing and
+        achieving victory.
+
+        <br><br>
+
+        Our goal is to build a disciplined,
+        skilled and competitive roster
+        and represent XENYX E-SPORTS
+        in Free Fire tournaments.
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= PROFILE MODAL ================= -->
+
+<div
+class="modal"
+id="profileModal">
+
+
+    <div class="profile-box">
+
+
+        <div class="profile-header">
+
+
+            <span
+            class="close"
+            onclick="closeProfile()">
+
+                ×
+
+            </span>
+
+
+            <h2 id="profileName">
+                Player Name
+            </h2>
+
+
+            <p id="profileIGN">
+                IGN
+            </p>
+
+
+        </div>
+
+
+        <div class="profile-content">
+
+
+            <div class="info">
+
+
+                <div class="info-box">
+
+                    <label>
+                        Full Name
+                    </label>
+
+                    <span
+                    id="fullName">
+                    </span>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <label>
+                        Birth Date
+                    </label>
+
+                    <span
+                    id="birthDate">
+                    </span>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <label>
+                        Address
+                    </label>
+
+                    <span
+                    id="address">
+                    </span>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <label>
+                        Phone / Device
+                    </label>
+
+                    <span
+                    id="phone">
+                    </span>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <label>
+                        Mobile Number
+                    </label>
+
+                    <span
+                    id="mobile">
+                    </span>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <label>
+                        Email
+                    </label>
+
+                    <span
+                    id="email">
+                    </span>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <label>
+                        WhatsApp
+                    </label>
+
+                    <span
+                    id="whatsapp">
+                    </span>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <label>
+                        In-Game Name (IGN)
+                    </label>
+
+                    <span
+                    id="ing">
+                    </span>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <label>
+                        UID
+                    </label>
+
+                    <span
+                    id="uid">
+                    </span>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <label>
+                        Join Date
+                    </label>
+
+                    <span
+                    id="joinDate">
+                    </span>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <label>
+                        Role
+                    </label>
+
+                    <span
+                    id="role">
+                    </span>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <label>
+                        Status
+                    </label>
+
+                    <span
+                    id="status"
+                    class="active">
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="achievement">
+
+                <h3>
+                    🏆 Achievements
+                </h3>
+
+                <p
+                id="achievements">
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    © 2026
+
+    <strong>
+        XENYX E-SPORTS
+    </strong>
+
+    — All Rights Reserved.
+
+</footer>
+
+
+
+<script>
+
+
+/* ==================================================
+   XENYX E-SPORTS PLAYER DATABASE
+   ================================================== */
+
+
+const players = [
+
+
+/* ================= MOIN ================= */
+
+{
+
+    fullName:
+    "Moin Uddin",
+
+    birthDate:
+    "11 October 2007",
+
+    address:
+    "Morelganj, Bagerhat (Daibajnahati, Joka)",
+
+    device:
+    "Infinix Hot 40",
+
+    mobile:
+    "01922911259",
+
+    email:
+    "moynu307@gmail.com",
+
+    whatsapp:
+    "01922911259",
+
+    ing:
+    "XE•ᴰᵃʳᵏᴢᵉⁿㅤ모",
+
+    uid:
+    "3684678009",
+
+    joinDate:
+    "10 March 2025",
+
+    role:
+    "Second Rusher + IGL",
+
+    status:
+    "ACTIVE",
+
+    achievements:
+    "Team Creator"
+
+},
+
+
+
+/* ================= SABBIR ================= */
+
+{
+
+    fullName:
+    "Sabbir Shaikh",
+
+    birthDate:
+    "29 August 2007",
+
+    address:
+    "Morelganj, Bagerhat (Daibajnahati, Joka)",
+
+    device:
+    "Motorola G34 5G",
+
+    mobile:
+    "01937342382",
+
+    email:
+    "sabbirshaikh2165@gmail.com",
+
+    whatsapp:
+    "01977113645",
+
+    ing:
+    "XE•SABBIR",
+
+    uid:
+    "9776339971",
+
+    joinDate:
+    "10 March 2025",
+
+    role:
+    "First Rusher",
+
+    status:
+    "ACTIVE",
+
+    achievements:
+    "Tournament achievements will be added here."
+
+},
+
+
+
+/* ================= SHAKIB ================= */
+
+{
+
+    fullName:
+    "Shakib Shaikh",
+
+    birthDate:
+    "01 December 2005",
+
+    address:
+    "Morelganj, Bagerhat (Daibajnahati, Joka)",
+
+    device:
+    "Infinix Hot 60 Pro",
+
+    mobile:
+    "01342090451",
+
+    email:
+    "mdjahirul8182@gmail.com",
+
+    whatsapp:
+    "01342090451",
+
+    ing:
+    "AS··SAKIBㅤ모",
+
+    uid:
+    "12513334924",
+
+    joinDate:
+    "10 March 2025",
+
+    role:
+    "Sniper",
+
+    status:
+    "ACTIVE",
+
+    achievements:
+    "Tournament achievements will be added here."
+
+},
+
+
+
+/* ================= RIYAD ================= */
+
+{
+
+    fullName:
+    "Riyad Shaikh",
+
+    birthDate:
+    "01 December 2005",
+
+    address:
+    "Morelganj, Bagerhat (Daibajnahati, Joka)",
+
+    device:
+    "Realme C75",
+
+    mobile:
+    "01987621921",
+
+    email:
+    "mdriyadshaikh3@gmail.com",
+
+    whatsapp:
+    "01987621921",
+
+    ing:
+    "AS··RIYADㅤ모",
+
+    uid:
+    "1763402800",
+
+    joinDate:
+    "10 March 2025",
+
+    role:
+    "Supporter",
+
+    status:
+    "ACTIVE",
+
+    achievements:
+    "Guild and Team Maker"
+
+},
+
+
+
+/* ================= TANZIL ================= */
+
+{
+
+    fullName:
+    "Tanzil Hossen",
+
+    birthDate:
+    "18 December 2007",
+
+    address:
+    "Morelganj, Bagerhat (Daibajnahati)",
+
+    device:
+    "Realme C53",
+
+    mobile:
+    "01908564399",
+
+    email:
+    "islamjumman242@gmail.com",
+
+    whatsapp:
+    "01908564399",
+
+    ing:
+    "Tanzil Sir",
+
+    uid:
+    "3831554937",
+
+    joinDate:
+    "16 August 2026",
+
+    role:
+    "Supporter",
+
+    status:
+    "ACTIVE",
+
+    achievements:
+    "Newly joined XENYX E-SPORTS player."
+
+}
+
+];
+
+
+
+/* ==================================================
+   OPEN PROFILE
+   ================================================== */
+
+function openProfile(index){
+
+    const p =
+    players[index];
+
+
+    document.getElementById(
+        "profileName"
+    ).innerText =
+    p.fullName;
+
+
+    document.getElementById(
+        "profileIGN"
+    ).innerText =
+    p.ing;
+
+
+    document.getElementById(
+        "fullName"
+    ).innerText =
+    p.fullName;
+
+
+    document.getElementById(
+        "birthDate"
+    ).innerText =
+    p.birthDate;
+
+
+    document.getElementById(
+        "address"
+    ).innerText =
+    p.address;
+
+
+    document.getElementById(
+        "phone"
+    ).innerText =
+    p.device;
+
+
+    document.getElementById(
+        "mobile"
+    ).innerText =
+    p.mobile;
+
+
+    document.getElementById(
+        "email"
+    ).innerText =
+    p.email;
+
+
+    document.getElementById(
+        "whatsapp"
+    ).innerText =
+    p.whatsapp;
+
+
+    document.getElementById(
+        "ing"
+    ).innerText =
+    p.ing;
+
+
+    document.getElementById(
+        "uid"
+    ).innerText =
+    p.uid;
+
+
+    document.getElementById(
+        "joinDate"
+    ).innerText =
+    p.joinDate;
+
+
+    document.getElementById(
+        "role"
+    ).innerText =
+    p.role;
+
+
+    document.getElementById(
+        "status"
+    ).innerText =
+    p.status;
+
+
+    document.getElementById(
+        "achievements"
+    ).innerText =
+    p.achievements;
+
+
+    document.getElementById(
+        "profileModal"
+    ).style.display =
+    "block";
+
+}
+
+
+
+/* ==================================================
+   CLOSE PROFILE
+   ================================================== */
+
+function closeProfile(){
+
+    document.getElementById(
+        "profileModal"
+    ).style.display =
+    "none";
+
+}
+
+
+
+/* ==================================================
+   CLOSE MODAL BY CLICKING OUTSIDE
+   ================================================== */
+
+window.onclick =
+function(event){
+
+    const modal =
+    document.getElementById(
+        "profileModal"
+    );
+
+
+    if(
+        event.target === modal
+    ){
+
+        modal.style.display =
+        "none";
+
+    }
+
+};
+
+
+</script>
+
+
+</body>
+
+</html>
